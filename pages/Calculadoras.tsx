@@ -213,7 +213,7 @@ const Calculadoras: React.FC = () => {
   };
 
   const tabs = [
-    { id: 'aposentadoria', label: 'Aposentadoria', desc: 'Simule o capital necessário para viver de renda global.' },
+    { id: 'aposentadoria', label: 'Aposentadoria', desc: 'Simule o capital necessário para viver de renda global.', externalUrl: 'https://ranjosconsult2.netlify.app' },
     { id: 'comparador', label: 'Comparador de Custos', desc: 'Analise a eficiência entre diferentes estruturas patrimoniais.', externalUrl: 'https://unrivaled-nougat-c58709.netlify.app' },
     { id: 'juros-compostos', label: 'Juros Compostos', desc: 'O poder do tempo e dos aportes na moeda forte.' },
     { id: 'tempo', label: 'Tempo Estimado', desc: 'Quanto tempo falta para sua liberdade financeira?' },
