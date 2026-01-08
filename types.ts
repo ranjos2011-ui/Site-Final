@@ -12,6 +12,11 @@ export interface CalculationResult {
   requiredMonthlySavings?: number;  // Quanto de aporte seria necessário para a meta original
   requiredYears?: number;           // Quanto tempo seria necessário com o aporte atual
   achievableMonthlyIncome?: number; // Renda possível com a capacidade atual
+  // Campos para Usufruto
+  propertyValue?: number;
+  usufructValue?: number;
+  barePropertyValue?: number;
+  itcmdEstimate?: number;
   scenarioA?: {
     finalValue: number;
     totalInvested: number;
@@ -54,6 +59,10 @@ export interface CalculatorInputs {
   initialInvestment?: number;
   monthlySavings?: number;
   expectedReturn?: number;
+  // Campos para Usufruto
+  propertyValue?: number;
+  usufructPercent?: number;
+  itcmdRate?: number;
   // Campos para Comparador de Custos
   costsA?: CostItem[];
   costsB?: CostItem[];

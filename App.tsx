@@ -49,9 +49,14 @@ const Header: React.FC = () => {
         </nav>
         
         <div className="hidden md:block">
-          <button className="text-[10px] tracking-widest uppercase font-bold text-[#c5a059] border border-[#c5a059] px-6 py-2 rounded-full hover:bg-[#c5a059] hover:text-white transition-all">
-            Contato
-          </button>
+          <a 
+            href="https://ranjosarearestrita.netlify.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block text-[10px] tracking-widest uppercase font-bold text-[#c5a059] border border-[#c5a059] px-6 py-2 rounded-full hover:bg-[#c5a059] hover:text-white transition-all shadow-sm"
+          >
+            Área de Membros
+          </a>
         </div>
       </div>
     </header>

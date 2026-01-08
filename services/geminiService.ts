@@ -7,7 +7,23 @@ export const getFinancialAdvice = async (inputs: CalculatorInputs, results: Calc
   
   let prompt = "";
 
-  if (type === 'comparator') {
+  if (type === 'usufruto') {
+    prompt = `
+      Como um consultor sênior da R Anjos Consultoria, elabore um parecer técnico sobre a estratégia de Doação com Reserva de Usufruto.
+      
+      DADOS DO CÁLCULO:
+      - Valor do Imóvel: R$ ${results.propertyValue?.toLocaleString('pt-BR')}
+      - Valor atribuído ao Usufruto: R$ ${results.usufructValue?.toLocaleString('pt-BR')}
+      - Valor da Nua-Propriedade: R$ ${results.barePropertyValue?.toLocaleString('pt-BR')}
+      - Estimativa de ITCMD: R$ ${results.itcmdEstimate?.toLocaleString('pt-BR')} (Baseado em alíquota de ${inputs.itcmdRate}%)
+
+      DIRETRIZES PARA O RELATÓRIO:
+      1. Explique a eficiência tributária de antecipar a herança via doação com reserva de usufruto em comparação ao inventário tradicional.
+      2. Aborde a proteção jurídica do doador (quem mantém o usufruto) e a segurança para os herdeiros.
+      3. Mencione como estruturas internacionais (Offshores) podem elevar essa proteção a um patamar global.
+      4. Tom sofisticado, minimalista e focado em preservação de legado.
+    `;
+  } else if (type === 'comparator') {
     const lastYear = results.projections?.[results.projections.length - 1];
     const duration = inputs.simulationYears || 30;
     const diffFinal = lastYear?.difference || 0;

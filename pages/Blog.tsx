@@ -2,96 +2,44 @@
 import React from 'react';
 
 const Blog: React.FC = () => {
-  const posts = [
-    {
-      title: "Por que diversificar seu patrimônio em moedas fortes?",
-      excerpt: "Entenda os riscos de manter todo o seu capital exposto a uma única economia e como a dolarização protege seu futuro.",
-      category: "Estratégia",
-      date: "15 Mai, 2024",
-      image: "https://images.unsplash.com/photo-1611974714024-4607ad03d639?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      title: "As vantagens tributárias de uma estrutura Offshore",
-      excerpt: "Mais do que proteção, as offshores oferecem um ambiente de diferimento fiscal e eficiência sucessória inigualável.",
-      category: "Tributário",
-      date: "10 Mai, 2024",
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      title: "Planejamento Sucessório Internacional: O Guia",
-      excerpt: "Como garantir que seu legado seja transmitido para a próxima geração sem os altos custos de inventário no Brasil.",
-      category: "Sucessão",
-      date: "05 Mai, 2024",
-      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      title: "Como escolher a jurisdição ideal para seus investimentos",
-      excerpt: "De Ilhas Cayman a Delaware: uma análise técnica das melhores localidades para abrir sua conta ou empresa.",
-      category: "Internacional",
-      date: "01 Mai, 2024",
-      image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800"
-    }
-  ];
-
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20">
-      <div className="text-center mb-16">
-        <h2 className="text-xs tracking-[0.3em] uppercase font-bold text-[#c5a059] mb-4">Insights & Análises</h2>
-        <h1 className="text-4xl font-extrabold text-[#0a0f1c] mb-6 tracking-tight">Blog R Anjos</h1>
-        <p className="text-base text-gray-400 max-w-xl mx-auto font-light leading-relaxed">
-          Artigos exclusivos sobre o mercado financeiro global, tributação internacional e proteção de ativos.
+    <div className="max-w-7xl mx-auto px-6 py-32 flex flex-col items-center justify-center min-h-[60vh] animate-in fade-in duration-1000">
+      <div className="text-center">
+        <h2 className="text-xs tracking-[0.5em] uppercase font-bold text-[#c5a059] mb-8">Conteúdo Exclusivo</h2>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#0a0f1c] mb-6 tracking-tight">Artigos em breve.</h1>
+        <p className="text-base text-gray-400 max-w-lg mx-auto font-light leading-relaxed mb-12">
+          Estamos preparando análises técnicas e insights estratégicos sobre o mercado financeiro global e proteção patrimonial.
         </p>
-      </div>
-
-      <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10">
-        {posts.map((post, i) => (
-          <div key={i} className="group cursor-pointer">
-            <div className="relative h-80 overflow-hidden rounded-[40px] mb-6 border border-gray-100 shadow-sm">
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-              />
-              <div className="absolute bottom-6 left-6">
-                <span className="bg-white/95 backdrop-blur-md px-4 py-2 rounded-full text-[9px] font-bold uppercase tracking-widest text-[#0a0f1c]">
-                  {post.category}
-                </span>
-              </div>
+        
+        <div className="flex flex-col items-center space-y-8">
+          <div className="w-12 h-px bg-gray-200"></div>
+          
+          <a 
+            href="https://www.instagram.com/raphaelanjoss/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center"
+          >
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-4 group-hover:text-[#c5a059] transition-colors">
+              Acompanhe em tempo real
+            </span>
+            <div className="flex items-center space-x-3 px-8 py-4 rounded-2xl bg-[#0a0f1c] text-white hover:bg-[#c5a059] transition-all duration-500 shadow-xl shadow-black/5">
+              <svg 
+                className="w-5 h-5" 
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span className="text-[11px] font-bold uppercase tracking-widest">@raphaelanjoss</span>
             </div>
-            <div className="px-4">
-              <span className="text-[10px] text-[#c5a059] font-bold uppercase tracking-widest block mb-3">{post.date}</span>
-              <h3 className="text-2xl font-bold text-[#0a0f1c] mb-4 group-hover:text-[#c5a059] transition-colors leading-tight">
-                {post.title}
-              </h3>
-              <p className="text-gray-500 font-light leading-relaxed mb-6">
-                {post.excerpt}
-              </p>
-              <button className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0a0f1c] flex items-center group-hover:translate-x-2 transition-transform">
-                Continuar lendo 
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-24 bg-gray-50 rounded-[40px] p-16 text-center">
-        <h3 className="text-2xl font-bold text-[#0a0f1c] mb-4">Assine nossa Newsletter</h3>
-        <p className="text-gray-500 font-light mb-8 max-w-md mx-auto">
-          Receba mensalmente nossos insights exclusivos sobre o mercado internacional diretamente no seu e-mail.
-        </p>
-        <div className="flex flex-col sm:flex-row max-w-lg mx-auto gap-4">
-          <input 
-            type="email" 
-            placeholder="Seu melhor e-mail" 
-            className="flex-grow px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 focus:ring-[#c5a059] outline-none transition-all"
-          />
-          <button className="px-8 py-4 bg-[#0a0f1c] text-white rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:bg-[#c5a059] transition-all">
-            Inscrever-se
-          </button>
+          </a>
         </div>
+      </div>
+      
+      {/* Elemento Decorativo */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 -z-10 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 bg-[#c5a059] rounded-full blur-[120px]"></div>
       </div>
     </div>
   );

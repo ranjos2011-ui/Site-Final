@@ -35,6 +35,35 @@ const Servicos: React.FC = () => {
         </p>
       </div>
 
+      {/* Campo de Destaque: Mande seu dinheiro pra fora */}
+      <div className="mb-20">
+        <a 
+          href="https://ranjosremessa.netlify.app" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group relative block w-full bg-[#fcfcfc] border border-[#c5a059]/30 rounded-[50px] p-12 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#c5a059]/10"
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#c5a059]/5 rounded-full -mr-20 -mt-20 transition-transform group-hover:scale-110"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-xl">
+              <span className="inline-block bg-[#c5a059]/10 text-[#c5a059] px-4 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.2em] mb-6">Operação Instantânea</span>
+              <h2 className="text-3xl font-extrabold text-[#0a0f1c] mb-4">Mande seu dinheiro pra fora</h2>
+              <p className="text-gray-500 font-light leading-relaxed">
+                Utilize nossa plataforma exclusiva de remessas com as menores taxas bancárias do mercado e suporte especializado para grandes volumes de capital.
+              </p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#0a0f1c] group-hover:text-[#c5a059] transition-colors">Iniciar Remessa</span>
+              <div className="w-16 h-16 rounded-full bg-[#0a0f1c] flex items-center justify-center text-[#c5a059] group-hover:bg-[#c5a059] group-hover:text-white transition-all shadow-xl">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map((s, i) => (
           <div key={i} className="group bg-white p-10 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
