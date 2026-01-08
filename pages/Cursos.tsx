@@ -3,6 +3,7 @@ import React from 'react';
 
 const Cursos: React.FC = () => {
   const checkoutLink = "https://pay.kiwify.com.br/gOVXYCm";
+  const whatsappUrl = "https://api.whatsapp.com/send/?phone=5534991299890";
   
   const courses = [
     {
@@ -101,9 +102,14 @@ const Cursos: React.FC = () => {
             Acompanhamento personalizado para estruturação de holdings e planejamento sucessório internacional.
           </p>
         </div>
-        <button className="whitespace-nowrap px-8 py-4 bg-[#c5a059] text-white font-bold rounded-xl hover:bg-[#0a0f1c] transition-all uppercase tracking-widest text-[10px] shadow-lg shadow-[#c5a059]/20">
+        <a 
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whitespace-nowrap px-8 py-4 bg-[#c5a059] text-white font-bold rounded-xl hover:bg-[#0a0f1c] transition-all uppercase tracking-widest text-[10px] shadow-lg shadow-[#c5a059]/20"
+        >
           Agendar Mentoria
-        </button>
+        </a>
       </div>
     </div>
   );

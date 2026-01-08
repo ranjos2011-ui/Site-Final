@@ -2,6 +2,7 @@
 import React from 'react';
 
 const Calculadoras: React.FC = () => {
+  const whatsappUrl = "https://api.whatsapp.com/send/?phone=5534991299890";
   const tools = [
     {
       id: 'aposentadoria',
@@ -87,9 +88,14 @@ const Calculadoras: React.FC = () => {
         <p className="text-gray-500 font-light leading-relaxed mb-10">
           As simulações fornecem uma base técnica inicial. Para um planejamento detalhado, estruturação de offshores ou análise de saída fiscal, recomendamos uma consulta com nossos especialistas.
         </p>
-        <button className="bg-[#0a0f1c] text-white px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-[#c5a059] transition-all shadow-xl">
+        <a 
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#0a0f1c] text-white px-10 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-[#c5a059] transition-all shadow-xl"
+        >
           Falar com um Consultor Sênior
-        </button>
+        </a>
       </div>
     </div>
   );

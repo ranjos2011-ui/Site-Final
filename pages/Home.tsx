@@ -15,8 +15,8 @@ const Home: React.FC = () => {
       title: "abra sua offshore nas Ilhas Virgens Britânicas",
       description: "Proteja seu patrimônio com estruturas internacionais eficientes em jurisdições de primeira linha.",
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
-      path: "/servicos",
-      external: false
+      path: "https://ranjosoffshore.netlify.app/",
+      external: true
     },
     {
       title: "Aposentadoria em moeda forte",
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
               <>
                 {/* Conteúdo em evidência acima da imagem */}
                 <div className="p-10 text-left flex-grow">
-                  <h3 className="text-2xl font-extrabold text-[#0a0f1c] mb-4 leading-tight group-hover:text-[#c5a059] transition-colors">
+                  <h3 className="text-2xl font-extrabold text-[#0a0f1c] mb-4 leading-tight group-hover:text-[#c5a059] transition-colors uppercase tracking-tighter">
                     {service.title}
                   </h3>
                   <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">
