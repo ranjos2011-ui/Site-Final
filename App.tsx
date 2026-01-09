@@ -9,7 +9,7 @@ import Blog from './pages/Blog';
 
 const Header: React.FC = () => {
   const location = useLocation();
-  const isActive = (path: string) => location.pathname === path || location.pathname.startsWith(path + '/');
+  const isActive = (path: string) => location.pathname === path || (path !== '/' && location.pathname.startsWith(path));
   const whatsappUrl = "https://api.whatsapp.com/send/?phone=5534991299890";
 
   return (
@@ -22,6 +22,7 @@ const Header: React.FC = () => {
           <span className="tracking-widest uppercase font-semibold text-xs text-[#0a0f1c]">R Anjos Consultoria</span>
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 lg:space-x-12">
           <Link 
             to="/calculadoras" 
@@ -49,12 +50,12 @@ const Header: React.FC = () => {
           </Link>
         </nav>
         
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3 md:space-x-4">
           <a 
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-block text-[10px] tracking-widest uppercase font-bold text-white bg-[#0a0f1c] px-6 py-2 rounded-full hover:bg-[#c5a059] transition-all shadow-sm"
+            className="hidden sm:inline-block text-[9px] md:text-[10px] tracking-widest uppercase font-bold text-white bg-[#0a0f1c] px-4 md:px-6 py-2 rounded-full hover:bg-[#c5a059] transition-all shadow-sm"
           >
             Contato
           </a>
@@ -62,13 +63,47 @@ const Header: React.FC = () => {
             href="https://ranjosarearestrita.netlify.app/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block text-[10px] tracking-widest uppercase font-bold text-[#c5a059] border border-[#c5a059] px-6 py-2 rounded-full hover:bg-[#c5a059] hover:text-white transition-all shadow-sm"
+            className="inline-block text-[9px] md:text-[10px] tracking-widest uppercase font-bold text-[#c5a059] border border-[#c5a059] px-4 md:px-6 py-2 rounded-full hover:bg-[#c5a059] hover:text-white transition-all shadow-sm"
           >
             Membros
           </a>
         </div>
       </div>
     </header>
+  );
+};
+
+const MobileBottomNav: React.FC = () => {
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path || (path !== '/' && location.pathname.startsWith(path));
+
+  const navItems = [
+    { path: '/', label: 'Home', icon: <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /> },
+    { path: '/calculadoras', label: 'Calculadoras', icon: <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /> },
+    { path: '/servicos', label: 'Serviços', icon: <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> },
+    { path: '/cursos', label: 'Cursos', icon: <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /> },
+    { path: '/blog', label: 'Blog', icon: <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2zM14 4v4h4" /> },
+  ];
+
+  return (
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-t border-gray-100 px-4 h-20 flex items-center justify-around shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
+      {navItems.map((item) => (
+        <Link 
+          key={item.path} 
+          to={item.path} 
+          className="flex flex-col items-center justify-center space-y-1 w-full"
+        >
+          <div className={`p-2 rounded-xl transition-all ${isActive(item.path) ? 'text-[#c5a059] bg-[#c5a059]/5' : 'text-gray-400'}`}>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {item.icon}
+            </svg>
+          </div>
+          <span className={`text-[8px] font-black uppercase tracking-widest ${isActive(item.path) ? 'text-[#c5a059]' : 'text-gray-400'}`}>
+            {item.label}
+          </span>
+        </Link>
+      ))}
+    </nav>
   );
 };
 
@@ -79,7 +114,7 @@ const FloatingContact: React.FC = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-[60] bg-white border border-gray-100 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 group"
+      className="fixed bottom-24 md:bottom-8 right-6 md:right-8 z-[60] bg-white border border-gray-100 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 group"
       aria-label="Entre em contato pelo WhatsApp"
     >
       <div className="absolute inset-0 bg-[#c5a059]/10 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
@@ -93,7 +128,7 @@ const FloatingContact: React.FC = () => {
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-white pb-20 md:pb-0">
         <Header />
         <main className="flex-grow pt-20">
           <Routes>
@@ -106,9 +141,10 @@ const App: React.FC = () => {
           </Routes>
         </main>
         
+        <MobileBottomNav />
         <FloatingContact />
 
-        <footer className="bg-gray-50 border-t border-gray-100 py-12">
+        <footer className="bg-gray-50 border-t border-gray-100 py-12 pb-32 md:pb-12">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <div className="flex justify-center mb-6">
                <div className="w-10 h-10 rounded-full border-2 border-[#c5a059] flex items-center justify-center">

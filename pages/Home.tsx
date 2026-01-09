@@ -5,83 +5,95 @@ import { Link } from 'react-router-dom';
 const Home: React.FC = () => {
   const mainServices = [
     {
+      number: "01",
       title: "Mande Seu Dinheiro para fora",
-      description: "Envie capital para o exterior com as melhores taxas do mercado e total segurança jurídica.",
-      image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&q=80&w=800",
+      description: "Envie capital para o exterior com as melhores taxas do mercado e total segurança jurídica através de nossa mesa de câmbio exclusiva.",
       path: "https://ranjosremessa.netlify.app",
-      external: true
+      external: true,
+      tag: "Câmbio & Remessa"
     },
     {
-      title: "abra sua offshore nas Ilhas Virgens Britânicas",
-      description: "Proteja seu patrimônio com estruturas internacionais eficientes em jurisdições de primeira linha.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+      number: "02",
+      title: "abra sua offshore internacional",
+      description: "Proteja seu patrimônio com estruturas eficientes em jurisdições premium (BVI/Cayman), garantindo sigilo e eficiência sucessória.",
       path: "https://ranjosoffshore.netlify.app/",
-      external: true
+      external: true,
+      tag: "Estruturação"
     },
     {
+      number: "03",
       title: "Aposentadoria em moeda forte",
-      description: "Construa um futuro sólido com investimentos globais e renda passiva em moeda forte.",
-      image: "https://images.unsplash.com/photo-1531053326607-9d349096d887?auto=format&fit=crop&q=80&w=800",
+      description: "Construa um futuro sólido com investimentos globais, fugindo da inflação local e garantindo renda passiva em dólares ou euros.",
       path: "/servicos",
-      external: false
+      external: false,
+      tag: "Planejamento"
     }
   ];
 
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
-      {/* Elemento visual de fundo */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[600px] -z-10 opacity-20 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#c5a059] to-transparent rounded-full blur-[160px]"></div>
+      {/* Background Decorativo - Orb de Luz Sutil */}
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-full max-w-7xl h-[800px] -z-10 opacity-30 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#c5a059]/20 via-white to-transparent rounded-full blur-[120px]"></div>
       </div>
 
       {/* Seção Hero */}
-      <section className="pt-24 pb-20 px-6 flex flex-col items-center text-center">
-        <div className="mb-10">
-          <div className="inline-flex items-center space-x-3 px-5 py-2 rounded-full border border-gray-100 bg-white/60 backdrop-blur-sm shadow-sm">
-            <div className="w-4 h-4 rounded-full border border-[#c5a059] flex items-center justify-center">
-              <span className="text-[#c5a059] font-bold text-[7px]">+</span>
-            </div>
-            <span className="text-[9px] tracking-[0.3em] uppercase font-bold text-gray-500">Exclusividade Financeira</span>
+      <section className="pt-20 md:pt-32 pb-20 px-6 flex flex-col items-center text-center">
+        <div className="mb-12">
+          <div className="inline-flex items-center space-x-3 px-6 py-2 rounded-full border border-[#c5a059]/10 bg-white/40 backdrop-blur-md shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c5a059] animate-pulse"></span>
+            <span className="text-[10px] tracking-[0.4em] uppercase font-black text-[#c5a059]">Wealth Management</span>
           </div>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#0a0f1c] mb-8 leading-[1.1] tracking-tight max-w-4xl">
-          Como proteger o seu dinheiro e <span className="text-[#c5a059]">pagar menos imposto.</span>
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold text-[#0a0f1c] mb-8 leading-[1.1] tracking-tighter max-w-5xl">
+          Proteção de capital <br className="hidden md:block" /> 
+          e <span className="text-[#c5a059]">liberdade global.</span>
         </h1>
 
-        <p className="max-w-2xl text-lg md:text-xl text-gray-500 font-light leading-relaxed mb-16">
-          Consultoria especializada em estratégias de proteção patrimonial e eficiência fiscal para investidores que buscam segurança global.
+        <p className="max-w-3xl text-lg md:text-2xl text-gray-400 font-light leading-relaxed mb-20 px-4">
+          Consultoria de elite para investidores que não aceitam as fronteiras do mercado local. Estratégias internacionais para quem busca o topo.
         </p>
 
-        {/* Grid de Quadros Clicáveis */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl px-4">
+        {/* Grid de Quadros de Destaque */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl px-4">
           {mainServices.map((service, index) => {
+            const cardClasses = "group relative bg-white rounded-[40px] border border-gray-100 p-10 md:p-14 text-left flex flex-col h-full min-h-[380px] md:min-h-[460px] justify-between transition-all duration-700 hover:border-[#c5a059]/30 hover:shadow-[0_40px_80px_-20px_rgba(197,160,89,0.15)] hover:-translate-y-3 overflow-hidden";
+            
             const content = (
               <>
-                {/* Conteúdo em evidência acima da imagem */}
-                <div className="p-10 text-left flex-grow">
-                  <h3 className="text-2xl font-extrabold text-[#0a0f1c] mb-4 leading-tight group-hover:text-[#c5a059] transition-colors uppercase tracking-tighter">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <div className="flex items-center text-[10px] font-bold uppercase tracking-widest text-[#c5a059]">
-                    Explorar Estratégia 
-                    <svg className="w-3 h-3 ml-2 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
+                {/* Detalhe Visual Interno - Número de Fundo */}
+                <div className="absolute -top-6 -right-6 text-9xl font-black text-gray-50/50 group-hover:text-[#c5a059]/5 transition-colors duration-700 pointer-events-none select-none">
+                  {service.number}
                 </div>
 
-                {/* Imagem abaixo do texto */}
-                <div className="relative h-64 overflow-hidden mx-6 mb-6 rounded-[32px]">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center space-x-4 mb-8">
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#c5a059] bg-[#c5a059]/5 px-4 py-1.5 rounded-full">
+                      {service.tag}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-[#0a0f1c] mb-6 leading-tight group-hover:text-[#c5a059] transition-colors duration-500 uppercase tracking-tighter">
+                    {service.title}
+                  </h3>
+                  
+                  <div className="w-12 h-1 bg-gray-100 mb-8 group-hover:w-24 group-hover:bg-[#c5a059] transition-all duration-700"></div>
+                  
+                  <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+                
+                <div className="relative z-10 flex items-center justify-between mt-12">
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#0a0f1c]/40 group-hover:text-[#c5a059] transition-colors duration-500">
+                    Acessar Solução
+                  </span>
+                  <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#c5a059] group-hover:border-[#c5a059] group-hover:text-white transition-all duration-500">
+                    <svg className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
               </>
             );
@@ -92,7 +104,7 @@ const Home: React.FC = () => {
                 href={service.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#c5a059]/10 hover:-translate-y-2"
+                className={cardClasses}
               >
                 {content}
               </a>
@@ -100,7 +112,7 @@ const Home: React.FC = () => {
               <Link 
                 key={index}
                 to={service.path}
-                className="group flex flex-col bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#c5a059]/10 hover:-translate-y-2"
+                className={cardClasses}
               >
                 {content}
               </Link>
@@ -109,9 +121,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Elemento decorativo inferior */}
-      <div className="flex justify-center pb-20">
-        <div className="w-px h-24 bg-gradient-to-b from-gray-200 to-transparent"></div>
+      {/* Trusted By / Call to Action sutil */}
+      <div className="max-w-7xl mx-auto px-6 mb-32">
+        <div className="py-12 border-y border-gray-50 flex flex-col md:flex-row items-center justify-between gap-8 opacity-60">
+          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-400">Jurisdições Atendidas:</span>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-[11px] font-black text-gray-400 uppercase tracking-widest">
+            <span>Cayman Islands</span>
+            <span>BVI</span>
+            <span>Bahamas</span>
+            <span>USA</span>
+            <span>Luxembourg</span>
+          </div>
+        </div>
       </div>
     </div>
   );

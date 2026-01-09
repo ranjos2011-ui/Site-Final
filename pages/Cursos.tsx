@@ -2,7 +2,6 @@
 import React from 'react';
 
 const Cursos: React.FC = () => {
-  const checkoutLink = "https://pay.kiwify.com.br/gOVXYCm";
   const whatsappUrl = "https://api.whatsapp.com/send/?phone=5534991299890";
   
   const courses = [
@@ -60,9 +59,9 @@ const Cursos: React.FC = () => {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
         {courses.map((c, i) => (
-          <div key={i} className="group bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm flex flex-col hover:shadow-xl transition-all duration-500">
+          <div key={i} className="group bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm flex flex-col transition-all duration-500 hover:shadow-lg">
             <div className="relative h-52 overflow-hidden">
-              <img src={c.image} alt={c.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src={c.image} alt={c.name} className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
               <div className="absolute top-4 left-4">
                 <span className="bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[8px] font-bold uppercase tracking-widest text-[#0a0f1c]">
                   {c.tag}
@@ -77,18 +76,16 @@ const Cursos: React.FC = () => {
               </p>
               
               <div className="pt-6 border-t border-gray-50 flex flex-col space-y-4">
-                <div className="flex items-baseline justify-between">
+                <div className="flex items-baseline justify-between opacity-50">
                   <span className="text-[9px] text-gray-400 uppercase font-bold tracking-widest">Investimento</span>
                   <span className="text-xl font-extrabold text-[#0a0f1c]">{c.price}</span>
                 </div>
-                <a 
-                  href={checkoutLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 rounded-xl bg-[#0a0f1c] text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#c5a059] transition-all shadow-md shadow-gray-100 text-center"
+                <button 
+                  disabled
+                  className="w-full py-4 rounded-xl bg-gray-50 text-gray-400 text-[10px] font-bold uppercase tracking-widest cursor-not-allowed border border-gray-100 transition-all"
                 >
-                  Matricular-se
-                </a>
+                  Matrículas em breve
+                </button>
               </div>
             </div>
           </div>
